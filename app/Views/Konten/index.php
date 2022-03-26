@@ -60,31 +60,27 @@
 		<!-- start: Row -->
 
 		<div class="row">
-			<?php
-			$sql = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY br_id DESC limit 9");
-			while ($data = mysqli_fetch_array($sql)) {
-			?>
-				<div class="span4">
-					<div class="icons-box">
+			<div class="span4">
+				<div class="icons-box">
+					<?php foreach ($produk as $k) : ?>
 						<div class="title">
-							<h3><?php echo $data['br_nm']; ?></h3>
+							<h3><?= $k['br_nm']; ?></h3>
 						</div>
-						<img src="<?php echo $data['br_gbr']; ?>" />
+						<img src="/gambar/<?= $k['br_gbr']; ?>" />
 						<div>
-							<h3>Rp.<?php echo number_format($data['br_hrg'], 2, ",", "."); ?></h3>
+							<h3>Rp.<?= number_format($k['br_hrg'], 2, ",", "."); ?></h3>
 						</div>
 						<!--	<p>
-						
-						</p> -->
-						<div class="clear"><a href="detailproduk.php?kd=<?php echo $data['br_id']; ?>" class="btn btn-lg btn-danger">Detail</a> <a href="detailproduk.php?kd=<?php echo $data['br_id']; ?>" class="btn btn-lg btn-success">Beli &raquo;</a></div>
+							
+							</p> -->
+						<div class="clear">
+							<a href="detailproduk.php?kd=<?= $k['br_id']; ?>" class="btn btn-lg btn-danger">Detail</a>
+							<a href="detailproduk.php?kd=<?= $k['br_id']; ?>" class="btn btn-lg btn-success">Beli &raquo;</a>
+						</div>
+					<?php endforeach; ?>
 
-					</div>
 				</div>
-			<?php
-			}
-
-
-			?>
+			</div>
 			<!---->
 		</div>
 		<!-- end: Row -->
