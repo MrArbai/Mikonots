@@ -405,46 +405,50 @@ html[xmlns] .slides {display: block;}
 /* Icon Boxes
 =================================================================== */
 .icons-box-container {
-	float:left;
+	float:right;
 }
 
 .icons-boxes-container {
-	float:left;
+	float:right;
 }
 
-.icons-box {
+.card {
 	text-align: center;
-	border: 1px solid #fff;
+	border: 1px solid rgb(56, 145, 115);
 	padding: 20px 10px 10px 10px;
+	max-width : 250px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	display: flex;
+	flex-direction: column;
 }
 
-.icons-box:hover {
+.card:hover {
 	background: #fcfcfc;
 	border: 1px solid #f6f6f6;
 }
 
-.icons-box h3 {
+.card h3 {
 	margin: 0 auto;
 	padding-top: 10px;
 	border-bottom: 3px double #f6f6f6;
 	margin-bottom: 10px;
 }
 
-.icons-box p {
+.card p {
 	float: left;
 }
 
-.icons-box i {
+.card i {
 	float: left;
 	margin: -2px 0 0px 0;
 }
 
-.icons-box i.circle {
+.card i.circle {
 	float: none !important;
 	margin: 0 auto !important;
 }
 
-.icons-box i.circle-color {
+.card i.circle-color {
 	float: none !important;
 	margin: 0 auto !important;
 }

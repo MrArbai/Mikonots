@@ -56,33 +56,27 @@
             <div class="hero-unit">
             </div> -->
 		<!-- end: Hero Unit -->
+		
 
 		<!-- start: Row -->
-
 		<div class="row">
-			<div class="span4">
-				<div class="icons-box">
-					<?php foreach ($produk as $k) : ?>
-						<div class="title">
-							<h3><?= $k['br_nm']; ?></h3>
-						</div>
-						<img src="/gambar/<?= $k['br_gbr']; ?>" />
-						<div>
+			<?php foreach ($produk as $k) : ?>
+				<div class="col-sm-4">
+					<div class="card">
+						<h3 class="card-title"><?= $k['br_nm']; ?></h3>
+						<img src="/gambar/<?= $k['br_gbr']; ?>" class="card-img-top" alt="...">
+						<div class="card-body">
 							<h3>Rp.<?= number_format($k['br_hrg'], 2, ",", "."); ?></h3>
 						</div>
-						<!--	<p>
-							
-							</p> -->
 						<div class="clear">
-							<a href="detailproduk.php?kd=<?= $k['br_id']; ?>" class="btn btn-lg btn-danger">Detail</a>
-							<a href="detailproduk.php?kd=<?= $k['br_id']; ?>" class="btn btn-lg btn-success">Beli &raquo;</a>
+								<a href="detailproduk.php?kd=<?= $k['br_id']; ?>" class="btn btn-lg btn-danger">Detail</a>
+								<a href="detailproduk.php?kd=<?= $k['br_id']; ?>" class="btn btn-lg btn-success">Beli &raquo;</a>
 						</div>
-					<?php endforeach; ?>
-
+					</div>
 				</div>
-			</div>
-			<!---->
+			<?php endforeach; ?>
 		</div>
+			<!---->
 		<!-- end: Row -->
 
 		<hr>
