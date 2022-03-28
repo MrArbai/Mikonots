@@ -56,7 +56,7 @@
             <div class="hero-unit">
             </div> -->
 		<!-- end: Hero Unit -->
-		
+
 
 		<!-- start: Row -->
 		<div class="row">
@@ -69,14 +69,14 @@
 							<h3>Rp.<?= number_format($k['br_hrg'], 2, ",", "."); ?></h3>
 						</div>
 						<div class="clear">
-								<a href="detailproduk.php?kd=<?= $k['br_id']; ?>" class="btn btn-lg btn-danger">Detail</a>
-								<a href="detailproduk.php?kd=<?= $k['br_id']; ?>" class="btn btn-lg btn-success">Beli &raquo;</a>
+							<a href="/Home/detail/<?= $k['br_id']; ?>" class="btn btn-lg btn-danger">Detail</a>
+							<a href="/Home/detail/<?= $k['br_id']; ?>" class="btn btn-lg btn-success">Beli &raquo;</a>
 						</div>
 					</div>
 				</div>
 			<?php endforeach; ?>
 		</div>
-			<!---->
+		<!---->
 		<!-- end: Row -->
 
 		<hr>

@@ -15,9 +15,22 @@ class Home extends BaseController
     {
         $produk = $this->ProdukModel->findall();
         $data = [
-            'title' => 'Home | Mikonots',
+            'title' => 'Mikonots',
             'produk' => $this->ProdukModel->getproduk()
         ];
         return view('Konten/index', $data);
+    }
+
+    public function detail($br_id)
+    {
+        $data = [
+            'title' => 'Daftar Komik',
+            'produk' => $this->KomikModel->getproduk($br_id)
+        ];
+        if (empty($data['produk'])) {
+
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(' Judul Komik ' . $br_id . ' Tidak di Temukan ');
+        }
+        return view('komik/produk', $data);  
     }
 }
