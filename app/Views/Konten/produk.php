@@ -1,22 +1,5 @@
-<?= $this->extend('layout/Template'); ?>
+<?= $this->extend('layout/template'); ?>
 <?= $this->section('content'); ?>
-<!-- start: Page Title -->
-<div id="page-title">
-
-	<div id="page-title-inner">
-
-		<!-- start: Container -->
-		<div class="container">
-
-			<h2><i class="ico-stats ico-white"></i>Produk Kami</h2>
-
-		</div>
-		<!-- end: Container  -->
-
-	</div>
-
-</div>
-<!-- end: Page Title -->
 
 <!--start: Wrapper-->
 <div id="wrapper">
@@ -29,28 +12,38 @@
 		<!-- start: Row -->
 
 		<div class="row">
-			<?php foreach ($produk as $k) : ?>
 				<div class="span4">
 					<div class="icons-box">
 						<div class="title">
-							<h3><?= $k['br_nm']; ?></h3>
+							<h3><?= $produk['br_nm']; ?></h3>
 						</div>
-						<img src="<?= $k['br_gbr']; ?>" />
+						<img src="<?= $produk['br_gbr']; ?>" />
 						<div>
-							<h3>Rp.<?= number_format($k['br_hrg'], 2, ",", "."); ?></h3>
+							<h3>Rp.<?= number_format($produk['br_hrg'], 2, ",", "."); ?></h3>
 						</div>
 						<!--	<p>
 							
 							</p> -->
 						<div class="clear">
-							<a href="detailproduk.php?hal=detailbarang&kd=<?php echo $data['br_id']; ?>" class="btn btn-lg btn-danger">Detail</a>
-							<a href="detailproduk.php?hal=detailbarang&kd=<?php echo $data['br_id']; ?>" class="btn btn-lg btn-success">Beli &raquo;</a>
+							<a href="detailproduk.php?hal=detailbarang&kd=<?php echo $produk['br_id']; ?>" class="btn btn-lg btn-danger">Detail</a>
+							<a href="detailproduk.php?hal=detailbarang&kd=<?php echo $produk['br_id']; ?>" class="btn btn-lg btn-success">Beli &raquo;</a>
 						</div>
 
 					</div>
 				</div>
-			<?php endforeach; ?>
-			<!---->
+			<!----><div class="col-sm-4">
+					<div class="card">
+						<h3 class="card-title"><?= $produk['br_nm']; ?></h3>
+						<img src="/gambar/<?= $produk['br_gbr']; ?>" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h3>Rp.<?= number_format($produk['br_hrg'], 2, ",", "."); ?></h3>
+						</div>
+						<div class="clear">
+							<a href="/Home/detail/<?= $produk['br_id']; ?>" class="btn btn-lg btn-danger">Detail</a>
+							<a href="/Home/detail/<?= $produk['br_id']; ?>" class="btn btn-lg btn-success">Beli &raquo;</a>
+						</div>
+					</div>
+				</div>
 		</div>
 		<!-- end: Row -->
 
