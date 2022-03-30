@@ -25,12 +25,12 @@ class Home extends BaseController
     {
         $data = [
             'title' => 'Daftar Komik',
-            'produk' => $this->KomikModel->getproduk($br_id)
+            'produk' => $this->ProdukModel->getproduk($br_id)
         ];
         if (empty($data['produk'])) {
 
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(' Judul Komik ' . $br_id . ' Tidak di Temukan ');
         }
-        return view('komik/produk', $data);  
+        return view('konten/produk', $data);  
     }
 }
