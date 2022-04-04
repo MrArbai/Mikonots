@@ -24,13 +24,13 @@ class Home extends BaseController
     public function detail($br_id)
     {
         $data = [
-            'title' => 'Daftar Komik',
+            'title' => 'Mikonots',
             'produk' => $this->ProdukModel->getproduk($br_id)
         ];
         if (empty($data['produk'])) {
 
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(' Judul Komik ' . $br_id . ' Tidak di Temukan ');
         }
-        return view('konten/produk', $data);  
+        return view('konten/detailproduk', $data);
     }
 }
